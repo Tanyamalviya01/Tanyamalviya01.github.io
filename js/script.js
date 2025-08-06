@@ -19,7 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
   populateExperienceSection();
   populateProjectsSection();
   populateSkillsSection();
+  populateCertificationsSection();
+  populateResearchSection();
   populateContactSection();
+
 
   // Initialize AOS animations
   if (typeof AOS !== 'undefined') {
@@ -193,9 +196,9 @@ function populateAboutSection() {
   container.innerHTML = `
     <div class="about-text">
       <p class="about-intro">
-        I'm a <strong>software engineer</strong> with a passion for backend development, 
-        cloud computing, and data analytics. I enjoy building scalable solutions and 
-        turning complex problems into clean, efficient code.
+        I'm a <strong>software engineer</strong> passionate about building scalable solutions that matter. 
+        I specialize in backend development, cloud infrastructure, and turning complex data into actionable insights. 
+        When I'm not coding, you'll find me exploring new technologies or mentoring fellow developers.
       </p>
       
       <p class="about-description">
@@ -204,24 +207,53 @@ function populateAboutSection() {
         I'm actively seeking full-time opportunities in software engineering and data-focused roles.
       </p>
 
+      <div class="about-skills">
+        <h3>What I Do</h3>
+        <ul>
+          <li>🚀 <strong>Backend Development:</strong> Python, Java, REST APIs, SQL</li>
+          <li>☁️ <strong>Cloud & DevOps:</strong> AWS, Docker, CI/CD pipelines</li>
+          <li>📊 <strong>Data Analytics:</strong> Power BI, Tableau, data visualization</li>
+          <li>🔧 <strong>Tools & Tech:</strong> Git, Jupyter, Excel, Agile methodologies</li>
+        </ul>
+      </div>
     </div>
 
     <div class="about-sidebar">
-      <div class="about-education">
-        <h3>Education</h3>
+      <div class="education-card">
+        <div class="education-header">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Education</h3>
+        </div>
         <div class="education-item">
           <h4>Master's in MIS</h4>
-          <p>Baylor University • 2024-2025</p>
+          <p class="institution">Baylor University</p>
+          <p class="period">2024-2025 • GPA: 3.88</p>
         </div>
         <div class="education-item">
           <h4>B.S. Computer Science</h4>
-          <p>Symbiosis University • 2019-2023</p>
+          <p class="institution">Symbiosis University</p>
+          <p class="period">2019-2023 • GPA: 3.42</p>
         </div>
       </div>
-
+      
+      <div class="quick-stats">
+        <div class="stat-box">
+          <h4>4+</h4>
+          <p>Years Experience</p>
+        </div>
+        <div class="stat-box">
+          <h4>8+</h4>
+          <p>Certifications</p>
+        </div>
+        <div class="stat-box">
+          <h4>1</h4>
+          <p>Research Paper</p>
+        </div>
+      </div>
     </div>
   `;
 }
+
 
 
 /* ────────────────────────────────────────────────────────── */
@@ -442,6 +474,167 @@ function populateContactSection() {
         <a href="mailto:Tanyamalviya13@gmail.com" class="btn btn-secondary">
           <i class="fas fa-envelope"></i> Send Message
         </a>
+      </div>
+    </div>
+  `;
+}
+
+/* ────────────────────────────────────────────────────────── */
+/*  CERTIFICATIONS SECTION                                    */
+/* ────────────────────────────────────────────────────────── */
+function populateCertificationsSection() {
+  const container = document.querySelector('.certifications-content');
+  if (!container) return;
+
+  const certifications = [
+    {
+      name: 'AWS Certified AI Practitioner',
+      issuer: 'Amazon Web Services',
+      date: 'June 2025',
+      credential: '9160a8edea2347e0ae5b5b1dc15c89d1',
+      logo: 'fab fa-aws',
+      category: 'Cloud Computing'
+    },
+    {
+      name: 'AWS Cloud Technical Essentials',
+      issuer: 'Amazon Web Services',
+      date: 'July 2025',
+      credential: 'ETZ5764NBEBY',
+      logo: 'fab fa-aws',
+      category: 'Cloud Computing'
+    },
+    {
+      name: 'Google Foundations of Data Science',
+      issuer: 'Google',
+      date: 'April 2023',
+      credential: 'NHHVHL9ZLOJA',
+      logo: 'fab fa-google',
+      category: 'Data Science'
+    },
+    {
+      name: 'Machine Learning Foundations',
+      issuer: 'University of Washington',
+      date: 'April 2023',
+      credential: '43TKGAZBAAZT',
+      logo: 'fas fa-university',
+      category: 'Machine Learning'
+    },
+    {
+      name: 'Introduction to Python',
+      issuer: 'Coursera Project Network',
+      date: 'April 2023',
+      credential: '7GF4ZWLGHWVH',
+      logo: 'fab fa-python',
+      category: 'Programming'
+    },
+    {
+      name: 'Big Data Modeling & Management',
+      issuer: 'UC San Diego',
+      date: 'May 2023',
+      credential: '527PM25CO2J2',
+      logo: 'fas fa-database',
+      category: 'Data Science'
+    }
+  ];
+
+  // Group certifications by category
+  const groupedCerts = certifications.reduce((groups, cert) => {
+    if (!groups[cert.category]) groups[cert.category] = [];
+    groups[cert.category].push(cert);
+    return groups;
+  }, {});
+
+  container.innerHTML = `
+    <div class="certifications-intro" data-aos="fade-up">
+      <p>Professional certifications that validate my expertise in cloud computing, data science, and software development.</p>
+    </div>
+    
+    <div class="cert-categories">
+      ${Object.entries(groupedCerts).map(([category, certs]) => `
+        <div class="cert-category" data-aos="fade-up">
+          <h3 class="category-title">${category}</h3>
+          <div class="cert-grid">
+            ${certs.map(cert => `
+              <div class="cert-card">
+                <div class="cert-logo">
+                  <i class="${cert.logo}"></i>
+                </div>
+                <div class="cert-details">
+                  <h4>${cert.name}</h4>
+                  <p class="cert-issuer">${cert.issuer}</p>
+                  <p class="cert-date">${cert.date}</p>
+                  <span class="cert-credential">ID: ${cert.credential}</span>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+/* ────────────────────────────────────────────────────────── */
+/*  RESEARCH/PUBLICATIONS SECTION                             */
+/* ────────────────────────────────────────────────────────── */
+function populateResearchSection() {
+  const container = document.querySelector('.research-content');
+  if (!container) return;
+
+  container.innerHTML = `
+    <div class="research-intro" data-aos="fade-up">
+      <p>Published research contributing to the field of cloud computing security and cryptography.</p>
+    </div>
+
+    <div class="research-paper" data-aos="zoom-in">
+      <div class="paper-header">
+        <div class="paper-badge">
+          <i class="fas fa-file-alt"></i>
+          <span>Published Research</span>
+        </div>
+        <h3>Enhancing Cloud Computing Security Using AES Algorithm</h3>
+      </div>
+      
+      <div class="paper-details">
+        <div class="authors">
+          <strong>Authors:</strong> <span class="highlight-author">Tanya Malviya</span>, Nilesh Chauhan, Shivani Narwariya, Ms. Shruti Jain, Vivek Singh Tomar
+        </div>
+        
+        <div class="publication-info">
+          <span class="journal-name">Journal of The Maharaja Sayajirao University of Baroda</span>
+          <span class="pub-year">2023</span>
+        </div>
+        
+        <div class="paper-meta">
+          <span>Volume-57, No.1 (I)</span> • 
+          <span>ISSN: 0025-0422</span> • 
+          <span>Pages 214-223</span>
+        </div>
+      </div>
+
+      <div class="abstract-section">
+        <h4>Abstract</h4>
+        <p>This paper proposes a secure data protection model where information is encrypted using Advanced Encryption Standard (AES) before being sent to the cloud, ensuring data privacy and security in cloud computing environments.</p>
+      </div>
+
+      <div class="keywords-section">
+        <h4>Keywords</h4>
+        <div class="keyword-tags">
+          <span class="keyword-tag">Cloud Computing</span>
+          <span class="keyword-tag">Cloud Security</span>
+          <span class="keyword-tag">Cryptography</span>
+          <span class="keyword-tag">AES Algorithm</span>
+        </div>
+      </div>
+
+      <div class="citation-section">
+        <h4>Citation</h4>
+        <div class="citation-text">
+          <code>Malviya, T., Chauhan, N., Narwariya, S., Jain, S., & Tomar, V. S. (2023). Enhancing Cloud Computing Security Using AES Algorithm. Journal of The Maharaja Sayajirao University of Baroda, 57(1), 214-223.</code>
+          <button class="copy-citation" onclick="navigator.clipboard.writeText('Malviya, T., Chauhan, N., Narwariya, S., Jain, S., & Tomar, V. S. (2023). Enhancing Cloud Computing Security Using AES Algorithm. Journal of The Maharaja Sayajirao University of Baroda, 57(1), 214-223.')">
+            <i class="fas fa-copy"></i> Copy Citation
+          </button>
+        </div>
       </div>
     </div>
   `;
