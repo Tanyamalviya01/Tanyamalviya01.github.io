@@ -238,7 +238,7 @@ function populateAboutSection() {
       
       <div class="quick-stats">
         <div class="stat-box">
-          <h4>4+</h4>
+          <h4>2+</h4>
           <p>Years Experience</p>
         </div>
         <div class="stat-box">
