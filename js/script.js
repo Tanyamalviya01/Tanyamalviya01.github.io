@@ -227,7 +227,7 @@ function populateAboutSection() {
         <div class="education-item">
           <h4>Master's in MIS</h4>
           <p class="institution">Baylor University</p>
-          <p class="period">2024-2025 • GPA: 3.88</p>
+          <p class="period">2024-2025 • GPA: 3.89</p>
         </div>
         <div class="education-item">
           <h4>B.S. Computer Science</h4>
@@ -268,7 +268,7 @@ function populateExperienceSection() {
       title: 'IT Operations & Media Lab Coordinator',
       company: 'Baylor University',
       location: 'Waco, TX',
-      period: 'Sept 2024 – Present',
+      period: 'Sept 2024 – Aug 2025',
       description: 'Built dynamic scheduling tools and provided technical support to 200+ users while optimizing AV workflows.',
       tools: ['Excel', 'OBS', 'Adobe CC', 'SharePoint']
     },
@@ -276,7 +276,7 @@ function populateExperienceSection() {
       title: 'Data Research Assistant',
       company: 'Baylor University',
       location: 'Waco, TX',
-      period: 'May 2025 – Present',
+      period: 'May 2025 – Aug 2025',
       description: 'Developed Python automation pipelines for blockchain decentralization analysis using GitHub data.',
       tools: ['Python', 'GitHub API', 'Jupyter', 'Pandas', 'Matplotlib']
     },
