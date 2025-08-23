@@ -1728,3 +1728,115 @@ section {
 .copy-citation:hover {
   background: var(--secondary-color);
 }
+/* ===== MOBILE OPTIMIZATION ===== */
+
+/* Ensure all interactive elements are touch-friendly */
+.btn, .nav-link, .social-link, .cert-card, .project-card {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Better mobile typography */
+@media screen and (max-width: 767px) {
+  p, li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  h1 {
+    font-size: 1.8rem !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  h3 {
+    font-size: 1.2rem !important;
+  }
+  
+  /* Prevent horizontal scroll */
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Stack all grid layouts vertically */
+  .cert-categories, 
+  .about-highlights, 
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Make cards full width on mobile */
+  .about-card, 
+  .stat-item, 
+  .highlight-item {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  /* Mobile hamburger animation */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+}
+/* ===== MOBILE ABOUT SECTION OVERRIDE ===== */
+
+@media (max-width: 767px) {
+  /* Force about section to stack vertically and center */
+  .about .about-content {
+    display: block !important;
+    text-align: center !important;
+    max-width: 100% !important;
+  }
+  
+  .about-text {
+    width: 100% !important;
+    margin: 0 auto 30px auto !important;
+    float: none !important;
+  }
+  
+  .about-sidebar {
+    width: 100% !important;
+    max-width: 350px !important;
+    margin: 0 auto !important;
+    float: none !important;
+    clear: both !important;
+  }
+  
+  /* Center all text content */
+  .about-intro,
+  .about-description,
+  .about-skills h3 {
+    text-align: center !important;
+  }
+  
+  /* Keep skills list readable but centered */
+  .about-skills ul {
+    display: inline-block !important;
+    text-align: left !important;
+  }
+  
+  /* Education card centering */
+  .education-card,
+  .about-education,
+  .about-certifications {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+  
+  .quick-stats {
+    justify-content: center !important;
+  }
+}
