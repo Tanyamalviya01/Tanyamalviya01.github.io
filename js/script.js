@@ -264,7 +264,7 @@ function populateExperienceSection() {
       location: 'Waco, TX',
       period: 'Sept 2024 – Aug 2025',
       description: 'Built an Excel scheduling system that reduced double-bookings by 25% and delivered accurate lab utilization reports for 200+ users. Implemented dashboards and workflows, streamlining AV resource management while training students and faculty on reporting tools.',
-      tools: ['Excel', 'Scheduling Systems', 'SharePoint', 'OBS Studio', 'Adobe Tools']
+      tools: ['Excel', 'Scheduling Systems', 'SharePoint', 'OBS Studio', 'Adobe Tools', 'Mac/PC']
     },
     {
       title: 'Data Research Assistant',
@@ -280,7 +280,7 @@ function populateExperienceSection() {
       location: 'Remote',
       period: 'June 2023 – July 2024',
       description: 'Created Power BI dashboards integrating SaaS and Oracle SQL data, giving leadership real-time KPI visibility. Automated SQL/Excel reporting workflows, reducing errors and cutting reporting timelines by 20%.',
-      tools: ['Power BI', 'Oracle SQL', 'Excel', 'Tableau', 'SaaS Platforms']
+      tools: ['Power BI', 'Oracle SQL', 'Excel', 'Tableau', 'SaaS Platforms', 'Microsoft Access']
     },
     {
       title: 'Enterprise Solutions Intern',
