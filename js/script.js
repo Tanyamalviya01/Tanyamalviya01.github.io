@@ -196,25 +196,18 @@ function populateAboutSection() {
   container.innerHTML = `
     <div class="about-text">
       <p class="about-intro">
-        I'm a <strong>software engineer</strong> passionate about building scalable solutions that matter. 
-        I specialize in backend development, cloud infrastructure, and turning complex data into actionable insights. 
-        When I'm not coding, you'll find me exploring new technologies or mentoring fellow developers.
+        I'm an <strong>MIS graduate</strong> with nearly 5 years of cross-cultural experience across India and the U.S., specializing in data, technology, and business operations. My work spans business intelligence, software development, project management, and risk analytics — all connected by one theme: using data and systems to solve real business problems.
       </p>
       
       <p class="about-description">
-        Currently pursuing my Master's in Management Information Systems at Baylor University, 
-        I bring hands-on experience with Python, SQL, AWS, and data visualization tools. 
-        I'm actively seeking full-time opportunities in software engineering and data-focused roles.
+        Skilled in Power BI, Tableau, SQL, Oracle, SaaS platforms, Python, and AWS, I've delivered solutions that improved reporting accuracy by 20%, streamlined scheduling for 200+ lab users, automated compliance workflows that cut manual effort by 30%, and built dashboards that gave leadership real-time KPI visibility.
       </p>
 
       <div class="about-skills">
-        <h3>What I Do</h3>
-        <ul>
-          <li>🚀 <strong>Backend Development:</strong> Python, Java, REST APIs, SQL</li>
-          <li>☁️ <strong>Cloud & DevOps:</strong> AWS, Docker, CI/CD pipelines</li>
-          <li>📊 <strong>Data Analytics:</strong> Power BI, Tableau, data visualization</li>
-          <li>🔧 <strong>Tools & Tech:</strong> Git, Jupyter, Excel, Agile methodologies</li>
-        </ul>
+        <h3>What Sets Me Apart</h3>
+        <p>What sets me apart is my ability to bridge technical complexity with business needs. I don't just code, model, or report — I connect the dots between people, processes, and technology to deliver solutions that create measurable impact.</p>
+        
+        <p>Known for strong communication, problem-solving, and adaptability, I thrive in collaborative environments where I can turn complex data into clear, actionable insights and help teams move from raw information to confident decisions.</p>
       </div>
     </div>
 
@@ -227,7 +220,7 @@ function populateAboutSection() {
         <div class="education-item">
           <h4>Master's in MIS</h4>
           <p class="institution">Baylor University</p>
-          <p class="period">2024-2025 • GPA: 3.89</p>
+          <p class="period">2024-2025 • GPA: 3.88</p>
         </div>
         <div class="education-item">
           <h4>B.S. Computer Science</h4>
@@ -238,7 +231,7 @@ function populateAboutSection() {
       
       <div class="quick-stats">
         <div class="stat-box">
-          <h4>2+</h4>
+          <h4>5</h4>
           <p>Years Experience</p>
         </div>
         <div class="stat-box">
@@ -256,12 +249,13 @@ function populateAboutSection() {
 
 
 
+
 /* ────────────────────────────────────────────────────────── */
 /*  EXPERIENCE TIMELINE                                       */
 /* ────────────────────────────────────────────────────────── */
 function populateExperienceSection() {
-  const timeline = document.querySelector('.timeline');
-  if (!timeline) return;
+  const container = document.querySelector('.experience-content');
+  if (!container) return;
 
   const experiences = [
     {
@@ -269,56 +263,60 @@ function populateExperienceSection() {
       company: 'Baylor University',
       location: 'Waco, TX',
       period: 'Sept 2024 – Aug 2025',
-      description: 'Built dynamic scheduling tools and provided technical support to 200+ users while optimizing AV workflows.',
-      tools: ['Excel', 'OBS', 'Adobe CC', 'SharePoint']
+      description: 'Built an Excel scheduling system that reduced double-bookings by 25% and delivered accurate lab utilization reports for 200+ users. Implemented dashboards and workflows, streamlining AV resource management while training students and faculty on reporting tools.',
+      tools: ['Excel', 'Scheduling Systems', 'SharePoint', 'OBS Studio', 'Adobe Tools']
     },
     {
       title: 'Data Research Assistant',
-      company: 'Baylor University',
+      company: 'Baylor University', 
       location: 'Waco, TX',
       period: 'May 2025 – Aug 2025',
-      description: 'Developed Python automation pipelines for blockchain decentralization analysis using GitHub data.',
-      tools: ['Python', 'GitHub API', 'Jupyter', 'Pandas', 'Matplotlib']
+      description: 'Developed Python pipelines to clean Ethereum/Bitcoin GitHub commit data, cutting analysis prep time by 40%. Designed dashboards that revealed contributor patterns and supported peer-reviewed blockchain research.',
+      tools: ['Python', 'GitHub API', 'Jupyter Notebooks', 'pandas', 'NumPy', 'Matplotlib']
     },
     {
       title: 'Product & Data Analyst',
       company: 'SeaWind Solutions',
-      location: 'Ahmedabad, India',
+      location: 'Remote',
       period: 'June 2023 – July 2024',
-      description: 'Created real-time KPI dashboards and reduced process rework by 20% through SQL optimization.',
-      tools: ['Power BI', 'SQL Server', 'Tableau']
+      description: 'Created Power BI dashboards integrating SaaS and Oracle SQL data, giving leadership real-time KPI visibility. Automated SQL/Excel reporting workflows, reducing errors and cutting reporting timelines by 20%.',
+      tools: ['Power BI', 'Oracle SQL', 'Excel', 'Tableau', 'SaaS Platforms']
     },
     {
-      title: 'Business Systems Intern',
+      title: 'Enterprise Solutions Intern',
       company: 'Tata Consultancy Services',
-      location: 'Indore, India',
+      location: 'Pune, India', 
       period: 'Jan 2021 – July 2021',
-      description: 'Automated reporting workflows and supported Agile development cycles.',
-      tools: ['Python', 'MS Visio', 'Jira']
+      description: 'Automated compliance workflows with Python + Excel macros, cutting manual effort by 30%. Supported Agile project documentation and UAT testing, improving adoption of BI tools across teams.',
+      tools: ['Python', 'Excel Macros', 'MS Visio', 'Jira', 'Confluence', 'Agile']
     }
   ];
 
-  timeline.innerHTML = experiences
-    .map(exp => `
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-header">
-            <h3>${exp.title}</h3>
-            <span class="timeline-period">${exp.period}</span>
-          </div>
-          <div class="timeline-company">
-            <i class="fas fa-building"></i> ${exp.company} • ${exp.location}
-          </div>
-          <p class="timeline-description">${exp.description}</p>
-          <div class="timeline-tools">
-            ${exp.tools.map(tool => `<span class="tool-tag">${tool}</span>`).join('')}
+  container.innerHTML = `
+    <div class="timeline">
+      ${experiences.map(exp => `
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>${exp.title}</h3>
+              <span class="timeline-period">${exp.period}</span>
+            </div>
+            <div class="timeline-company">
+              <i class="fas fa-building"></i>
+              <span>${exp.company} • ${exp.location}</span>
+            </div>
+            <p class="timeline-description">${exp.description}</p>
+            <div class="timeline-tools">
+              ${exp.tools.map(tool => `<span class="tool-tag">${tool}</span>`).join('')}
+            </div>
           </div>
         </div>
-      </div>
-    `)
-    .join('');
+      `).join('')}
+    </div>
+  `;
 }
+
 
 /* ────────────────────────────────────────────────────────── */
 /*  PROJECTS SHOWCASE                                         */
