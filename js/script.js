@@ -226,7 +226,7 @@ function populateAboutSection() {
           <div class="education-item">
             <h4>Master's in MIS</h4>
             <p class="institution">Baylor University</p>
-            <p class="period">2024-2025 • GPA: 3.88</p>
+            <p class="period">2024-2025 • GPA: 3.89</p>
           </div>
           <div class="education-item">
             <h4>B.S. Computer Science</h4>
